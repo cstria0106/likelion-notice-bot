@@ -10,6 +10,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"strings"
 	"syscall"
 )
 
@@ -35,7 +36,7 @@ func readFileToString(path string) (string, error) {
 		return "", err
 	}
 
-	return string(s), nil
+	return strings.TrimSpace(string(s)), nil
 }
 
 func New() (*Bot, error) {
